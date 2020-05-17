@@ -1,0 +1,4 @@
+input[type="submit"]:disabled {
+    background: #dddddd;
+    cursor: not-allowed !important;
+  }

@@ -1,0 +1,240 @@
+
+    <app-navigation></app-navigation>
+    
+    <!-- <main class="my-form">
+        <div class="cotainer">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">Register</div>
+                            <div class="card-body">
+                                <form name="my-form" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+                                    <div class="form-group row">
+                                        <label for="full_name" class="col-md-4 col-form-label text-md-right">First Name</label>
+                                        <div class="col-md-6">
+                                            <input type="text"   formControlName="firstName" class="form-control" name="full-name">
+                                        </div>
+                                        <div *ngIf="registrationForm.controls.firstName.touched  && registrationForm.controls.firstName.errors" style="display: block;" class="invalid-feedback">
+                                            <div *ngIf="registrationForm.controls.firstName.errors.required">First Name is required</div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="form-group row">
+                                        <label for="full_name" class="col-md-4 col-form-label text-md-right">Last Name</label>
+                                        <div class="col-md-6">
+                                            <input type="text"   formControlName="lastName" class="form-control" name="full-name">
+                                        </div>
+                                        <div *ngIf="registrationForm.controls.lastName.touched  && registrationForm.controls.lastName.errors" style="display: block;" class="invalid-feedback">
+                                            <div *ngIf="registrationForm.controls.lastName.errors.required">Last Name is required</div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="form-group row">
+                                        <label for="full_name" class="col-md-4 col-form-label text-md-right">User Name</label>
+                                        <div class="col-md-6">
+                                            <input type="text"   formControlName="userName" class="form-control" name="full-name">
+                                        </div>
+                                        <div *ngIf="registrationForm.controls.userName.touched  && registrationForm.controls.userName.errors" style="display: block;" class="invalid-feedback">
+                                            <div *ngIf="registrationForm.controls.userName.errors.required">User Name is required</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="full_name" class="col-md-4 col-form-label text-md-right">User Email</label>
+                                        <div class="col-md-6">
+                                            <input type="text"   formControlName="email" class="form-control" name="full-name">
+                                        </div>
+                                        <div *ngIf="registrationForm.controls.email.touched  && registrationForm.controls.email.errors" style="display: block;" class="invalid-feedback">
+                                            <div *ngIf="registrationForm.controls.email.errors.required">User Name is required</div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="form-group row">
+                                        <label for="full_name" class="col-md-4 col-form-label text-md-right">Password</label>
+                                        <div class="col-md-6">
+                                            <input type="password"   formControlName="password" class="form-control" name="full-name">
+                                        </div>
+                                        <div *ngIf="registrationForm.controls.password.touched  && registrationForm.controls.password.errors" style="display: block;" class="invalid-feedback">
+                                            <div *ngIf="registrationForm.controls.password.errors.required">Password is required</div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="form-group row">
+                                        <label for="full_name" class="col-md-4 col-form-label text-md-right">Confirm password</label>
+                                        <div class="col-md-6">
+                                            <input type="password"   formControlName="confirmPassword" class="form-control" name="full-name">
+                                        </div>
+                                        <div *ngIf="registrationForm.controls.confirmPassword.touched  && registrationForm.controls.confirmPassword.errors" style="display: block;" class="invalid-feedback">
+                                            <div *ngIf="registrationForm.controls.confirmPassword.errors.required">Password should be match with</div>
+                                        </div>
+                                    </div>
+    
+                                        <div class="col-md-6 offset-md-4">
+                                            <button type="submit" [disabled]="!registrationForm.valid" class="btn btn-primary">
+                                            Register
+                                            </button>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    
+    </main> -->
+    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body border-bottom">
+                        <h4 class="card-title">Register Your Organisation</h4>   
+                        <div *ngIf="tokenNotValid" class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>Warning !</strong> Your access token has been expired contact to PMS support.
+                            <button type="button" (click)="tokenNotValid=false;" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div> 
+                          <div *ngIf="organizationCreated" class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Congratulation !</strong> you have succesfully created organization.
+                            <button type="button" (click)="organizationCreated=false;" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>                     
+                    </div>
+                    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+                    <div class="card-body">
+                        <div class="row mt-3">
+                            <div class="col-lg-4">
+                                <input type="text" placeholder="username"  formControlName="username" class="form-control form-control-sm">
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="input-group"><input type="password" formControlName="password" placeholder="Password" class="form-control form-control-sm">&nbsp;<i data-placement="top" data-toggle="popover" title="Password Validation" data-content="Password should be alleast 8 character. And Password should have alleast One capital and One special character" class="fa fa-info-circle"></i></div>
+                                <div *ngIf="registrationForm.controls.password.touched  && registrationForm.controls.password.errors" style="display: block;" class="invalid-feedback">
+                                    <div *ngIf="registrationForm.controls.password.errors.required">Password is required</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" placeholder="Confirm Password" formControlName="confirmPassword" class="form-control form-control-sm">
+                                <div *ngIf="registrationForm.controls.confirmPassword.touched  && registrationForm.controls.confirmPassword.errors" style="display: block;" class="invalid-feedback">
+                                    <div *ngIf="registrationForm.controls.confirmPassword.errors.required">Password is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row mt-2">
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="Organisation Full Name" formControlName="organizationName" class="form-control form-control-sm">
+                                <div *ngIf="registrationForm.controls.organizationName.touched  && registrationForm.controls.organizationName.errors" style="display: block;" class="invalid-feedback">
+                                    <div *ngIf="registrationForm.controls.organizationName.errors.required">Organization</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="Organisation Owner Name" formControlName="organizationOwnerName"  class="form-control form-control-sm">
+                                <div *ngIf="registrationForm.controls.organizationOwnerName.touched  && registrationForm.controls.organizationOwnerName.errors" style="display: block;" class="invalid-feedback">
+                                    <div *ngIf="registrationForm.controls.organizationOwnerName.errors.required">Organization owner name</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="Contact Number"  formControlName="contact" class="form-control form-control-sm">
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="Email ID" formControlName="email" class="form-control form-control-sm">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-lg-12">
+                                <textarea placeholder="Full Address" formControlName="address" rows="5" class="form-control form-control-sm"></textarea>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-lg-3">
+                                <input type="text" placeholder="Pin Code" formControlName="pincode" class="form-control form-control-sm">
+                            </div>
+                            <div class="col-lg-3">
+                                <select class="form-control form-control-sm" formControlName="city">                                    
+                                    <option value="0">Please select City</option>
+                                    <option value="30">Gurugram</option>
+                                    <option value="1">New Delhi</option>
+                                    <option value="2">Lucknow</option>
+                                    <option value="2">Kanpur</option>
+                                    <option value="3">Patna</option>
+                                    <option value="2">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3">
+                                <select class="form-control form-control-sm" formControlName="state">                                    
+                                    <option value="0">Please select State</option>
+                                    <option value="30">Andaman and Nicobar Islands</option>
+                                        <option value="1">Andhra Pradesh</option>
+                                        <option value="2">Arunachal Pradesh</option>
+                                        <option value="3">Assam</option>
+                                        <option value="4">Bihar</option>
+                                        <option value="31">Chandigarh</option>
+                                        <option value="5">Chhattisgarh</option>
+                                        <option value="32">Dadra and Nagar Haveli</option>
+                                        <option value="33">Daman and Diu</option>
+                                        <option value="34">Delhi</option>
+                                        <option value="6">Goa</option>
+                                        <option value="7">Gujarat</option>
+                                        <option value="8">Haryana</option>
+                                        <option value="9">Himachal Pradesh</option>
+                                        <option value="10">Jammu and Kashmir</option>
+                                        <option value="11">Jharkhand</option>
+                                        <option value="12">Karnataka</option>
+                                        <option value="13">Kerala</option>
+                                        <option value="35">Lakshadweep</option>
+                                        <option value="14">Madhya Pradesh</option>
+                                        <option value="15">Maharashtra</option>
+                                        <option value="16">Manipur</option>
+                                        <option value="17">Meghalaya</option>
+                                        <option value="18">Mizoram</option>
+                                        <option value="19">Nagaland</option>
+                                        <option value="20">Odisha</option>
+                                        <option value="36">Puducherry</option>
+                                        <option value="21">Punjab</option>
+                                        <option value="22">Rajasthan</option>
+                                        <option value="23">Sikkim</option>
+                                        <option value="24">Tamil Nadu</option>
+                                        <option value="25">Telangana</option>
+                                        <option value="26">Tripura</option>
+                                        <option value="27">Uttar Pradesh</option>
+                                        <option value="28">Uttarakhand</option>
+                                        <option value="29">West Bengal</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3">
+                                <select class="form-control form-control-sm" formControlName="country">                                    
+                                    <option value="0">Please select Country</option>
+                                    <option value="30">India</option>
+                                    <option value="1">United State of America</option>
+                                    <option value="2">Australia</option>
+                                    <option value="2">Dubai</option>
+                                    <option value="3">Singapore</option>
+                                    <option value="2">Canada</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-lg-6">
+                                <label>Organisation Logo</label>
+                                <input type="file" class="form-control form-control-sm">
+                            </div>
+                            <div class="col-lg-6">
+                                <label>&nbsp;</label>
+                                <input type="date" placeholder="Commencement Date" formControlName="commensementDate" class="form-control form-control-sm">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-lg-12 text-right">
+                                <button class="btn btn-dark" (click)="reset()" type="reset">Reset</button>
+                                <button class="btn btn-primary" [disabled]="!registrationForm.valid" type="submit">Submit form</button>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
