@@ -12,8 +12,9 @@ import { NavigationComponent } from './shared-components/navigation/navigation.c
 import { CommonModule } from '@angular/common';
 import { RegistrationRequestComponent } from './shared-components/registration-request/registration-request.component';
 import { DashboardComponent } from './shared-components/dashboard/dashboard.component';
-import { DashboardHeaderComponent } from './shared-components/dashboard-header/dashboard-header.component';
+import { DashboardHeaderComponent } from './shared-components/dashboard/dashboard-header/dashboard-header.component';
 import { DashboardFooterComponent } from './shared-components/dashboard/dashboard-footer/dashboard-footer.component';
+
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
