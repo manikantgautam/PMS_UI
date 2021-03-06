@@ -21,12 +21,12 @@ export class LoginService {
   }
 
   registration(postData){
-    return this.httpClient.post(`http://localhost:8080/register`, postData);
+    return this.httpClient.post(`http://localhost:9000/register`, postData);
   }
   getData(ontologyName) {
     return this.httpClient.get(``);
   }
   validateToken(token){
-    return this.httpClient.post(`http://localhost:8080/isvalidtoken?token=${token}`, {});
+    return this.httpClient.post(`http://localhost:9000/isvalidtoken?token=${token}`, {});
   }
 }

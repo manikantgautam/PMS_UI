@@ -11,7 +11,7 @@ export class RegistrationService {
   
 
   registrationReq(postData){
-    return this.httpClient.post(`http://localhost:8080/registerReq`, postData);
+    return this.httpClient.post(`http://localhost:9000/registerReq`, postData);
   }
 
 }

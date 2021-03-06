@@ -56,3 +56,12 @@ body {
     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 
 }
+
+.alert-dismissible{
+    width: 636px;
+    margin-top: 20px;
+}
+
+.submit_btn{
+    margin-left: 10px;
+}

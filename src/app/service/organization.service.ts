@@ -11,13 +11,13 @@ export class OrganizationService {
   }
   
   login(postData){
-    return this.httpClient.post(`http://localhost:8080/login`, postData);
+    return this.httpClient.post(`http://localhost:9000/login`, postData);
   }
 
   registration(postData){
-    return this.httpClient.post(`http://localhost:8080/createOrg`, postData);
+    return this.httpClient.post(`http://localhost:9000/createOrg`, postData);
   }
   getUsersOrganization(userId) {
-    return this.httpClient.get(`http://localhost:8080/organization/all?userId=${userId}`);
+    return this.httpClient.get(`http://localhost:9000/organization/all?userId=${userId}`);
   }
 }
