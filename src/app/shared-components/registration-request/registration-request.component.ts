@@ -13,6 +13,7 @@ export class RegistrationRequestComponent implements OnInit {
   sendInvite : FormGroup;
   requestSent: boolean;
   loginfailed:boolean;
+  tokenNotValid:boolean;
   constructor(private formBuilder: FormBuilder,private router: Router,
     private regService:RegistrationService) { 
     this.sendInvite = this.formBuilder.group({
