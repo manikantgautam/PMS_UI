@@ -13050,3 +13050,111 @@ html body .waves-notransition {
 	background: #e9ecef
 }
 
+
+.mailbox .drop-title {
+	font-weight: 600;
+	padding: 11px 20px 15px;
+	border-radius: 2px 2px 0 0;
+	position: relative
+}
+
+.mailbox .drop-title:after {
+	content: "";
+	position: absolute;
+	/* background: url(../../assets/images/background/img5.png) no-repeat; */
+	opacity: .2;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-size: cover
+}
+
+.mailbox .nav-link {
+	border-top: 1px solid #e9ecef;
+	padding-top: 15px;
+	color: #3e5569
+}
+
+.mailbox .message-center {
+	height: 317px;
+	overflow: auto;
+	position: relative
+}
+
+.mailbox .message-center .message-item {
+	border-bottom: 1px solid #e9ecef;
+	display: block;
+	text-decoration: none;
+	padding: 9px 15px
+}
+
+.mailbox .message-center .message-item.active,
+.mailbox .message-center .message-item:hover {
+	background: #f8f9fa
+}
+
+.mailbox .message-center .message-item .message-title {
+	color: #212529
+}
+
+.mailbox .message-center .message-item .user-img {
+	width: 40px;
+	position: relative;
+	display: inline-block;
+	margin: 0 0 15px 0
+}
+
+.mailbox .message-center .message-item .user-img img {
+	width: 100%
+}
+
+.mailbox .message-center .message-item .user-img .profile-status {
+	border: 2px solid #fff;
+	border-radius: 50%;
+	display: inline-block;
+	height: 10px;
+	left: 30px;
+	position: absolute;
+	top: 1px;
+	width: 10px
+}
+
+.mailbox .message-center .message-item .user-img .online {
+	background: #36bea6
+}
+
+.mailbox .message-center .message-item .user-img .busy {
+	background: #f62d51
+}
+
+.mailbox .message-center .message-item .user-img .away {
+	background: #ffbc34
+}
+
+.mailbox .message-center .message-item .user-img .offline {
+	background: #ffbc34
+}
+
+.mailbox .message-center .message-item .mail-contnet {
+	display: inline-block;
+	width: 75%;
+	padding-left: 10px;
+	vertical-align: middle
+}
+
+.mailbox .message-center .message-item .mail-contnet .message-title {
+	margin: 5px 0 0
+}
+
+.mailbox .message-center .message-item .mail-contnet .mail-desc,
+.mailbox .message-center .message-item .mail-contnet .time {
+	font-size: 12px;
+	display: block;
+	margin: 1px 0;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	color: #a1aab2;
+	white-space: nowrap
+}
+
