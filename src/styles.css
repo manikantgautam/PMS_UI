@@ -11427,16 +11427,16 @@ html[dir=ltr] body .p-l-0 {
 }
 
 
-#main-wrapper {
+/* #main-wrapper {
 	width: 100%;
 	overflow: hidden
-}
+} */
 
 .page-wrapper {
 	background: #eef5f9;
 	position: relative;
 	transition: .2s ease-in;
-	display: none
+	/* display: none */
 }
 
 .page-wrapper>.container-fluid,
