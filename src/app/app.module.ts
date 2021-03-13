@@ -15,6 +15,7 @@ import { DashboardComponent } from './shared-components/dashboard/dashboard.comp
 import { DashboardHeaderComponent } from './shared-components/dashboard/dashboard-header/dashboard-header.component';
 import { DashboardFooterComponent } from './shared-components/dashboard/dashboard-footer/dashboard-footer.component';
 import { DashboardSidebarComponent } from './shared-components/dashboard/dashboard-sidebar/dashboard-sidebar.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -39,7 +40,8 @@ const routes: Routes = [
   imports: [
     BrowserModule, CommonModule,FormsModule, 
     ReactiveFormsModule,HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
