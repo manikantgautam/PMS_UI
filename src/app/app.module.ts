@@ -14,6 +14,7 @@ import { RegistrationRequestComponent } from './shared-components/registration-r
 import { DashboardComponent } from './shared-components/dashboard/dashboard.component';
 import { DashboardHeaderComponent } from './shared-components/dashboard/dashboard-header/dashboard-header.component';
 import { DashboardFooterComponent } from './shared-components/dashboard/dashboard-footer/dashboard-footer.component';
+import { DashboardSidebarComponent } from './shared-components/dashboard/dashboard-sidebar/dashboard-sidebar.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -32,7 +33,8 @@ const routes: Routes = [
     RegistrationRequestComponent,
     DashboardComponent,
     DashboardHeaderComponent,
-    DashboardFooterComponent
+    DashboardFooterComponent,
+    DashboardSidebarComponent
   ],
   imports: [
     BrowserModule, CommonModule,FormsModule, 

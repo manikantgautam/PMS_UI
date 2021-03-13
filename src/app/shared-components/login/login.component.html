@@ -9,15 +9,18 @@
             <hr>
             <form class="form-inline" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="row">
-                <div class="col"><input type="email" class="form-control"  formControlName="userName" placeholder="EmailID/UserID" id="email"></div>
+                <div class="col-4"><input type="email" class="form-control"  formControlName="userName" placeholder="EmailID/UserID" id="email">
                   <div *ngIf="loginForm.controls.userName.touched  && loginForm.controls.userName.errors" style="display: block;" class="invalid-feedback">
                       <div *ngIf="loginForm.controls.userName.errors.required">User Name is required</div>
                   </div>
-                <div class="col"><input type="password" class="form-control" formControlName="password" placeholder="Enter password" id="pwd"></div>
+                </div>
+                <div class="col-4"><input type="password" class="form-control" formControlName="password" placeholder="Enter password" id="pwd">
                 <div *ngIf="loginForm.controls.password.touched  && loginForm.controls.password.errors" style="display: block;"  class="invalid-feedback">
-                  <div *ngIf="loginForm.controls.password.errors.required">User Name is required</div>
+                  <div *ngIf="loginForm.controls.password.errors.required">8 digit password is required</div>
                  </div>
-                <div class="col"><button type="submit" [disabled]="!loginForm.valid" class="btn btn-custom">Login</button></div>
+                </div>
+
+                <div class="col-4"><button type="submit" [disabled]="!loginForm.valid" class="btn btn-custom">Login</button></div>
             </div>
             
               </form>
