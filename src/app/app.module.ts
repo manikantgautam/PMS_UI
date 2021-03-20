@@ -16,6 +16,16 @@ import { DashboardHeaderComponent } from './shared-components/dashboard/dashboar
 import { DashboardFooterComponent } from './shared-components/dashboard/dashboard-footer/dashboard-footer.component';
 import { DashboardSidebarComponent } from './shared-components/dashboard/dashboard-sidebar/dashboard-sidebar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CompanyViewComponent } from './shared-components/orgMgmt/company-view/company-view.component';
+import { AddCompanyComponent } from './shared-components/orgMgmt/add-company/add-company.component';
+import { CompanyBranchViewComponent } from './shared-components/orgMgmt/company-branch-view/company-branch-view.component';
+import { AddCompanyBranchComponent } from './shared-components/orgMgmt/add-company-branch/add-company-branch.component';
+import { EmployeeViewComponent } from './shared-components/orgMgmt/employee-view/employee-view.component';
+import { AddEmployeeComponent } from './shared-components/orgMgmt/add-employee/add-employee.component';
+import { AttendanceViewComponent } from './shared-components/orgMgmt/attendance-view/attendance-view.component';
+import { AddAttendanceComponent } from './shared-components/orgMgmt/add-attendance/add-attendance.component';
+import { SalaryWagesViewComponent } from './shared-components/orgMgmt/salary-wages-view/salary-wages-view.component';
+import { AddEmployeeSalaryWagesComponent } from './shared-components/orgMgmt/add-employee-salary-wages/add-employee-salary-wages.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -35,7 +45,17 @@ const routes: Routes = [
     DashboardComponent,
     DashboardHeaderComponent,
     DashboardFooterComponent,
-    DashboardSidebarComponent
+    DashboardSidebarComponent,
+    CompanyViewComponent,
+    AddCompanyComponent,
+    CompanyBranchViewComponent,
+    AddCompanyBranchComponent,
+    EmployeeViewComponent,
+    AddEmployeeComponent,
+    AttendanceViewComponent,
+    AddAttendanceComponent,
+    SalaryWagesViewComponent,
+    AddEmployeeSalaryWagesComponent
   ],
   imports: [
     BrowserModule, CommonModule,FormsModule, 

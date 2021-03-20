@@ -90,12 +90,12 @@
                                 <a class="dropdown-item" href="#">Advance Register</a>
                                 <a class="dropdown-item" href="#">Fine Register</a>
                                 <a class="dropdown-item" href="#">Bonus Register</a>                                
-                                <a class="dropdown-item" href="#">Food Coupon Register</a>
+                                <a class="dropdown-item" href="#">Food Coupon Register</a>                                
                             </div>
                         </li>
                         
-                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a>
-                            <form class="app-search position-absolute">
+                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)" (click)="tootgleTag()"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            <form class="app-search position-absolute" *ngIf="showMe">
                                 <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                             </form>
                         </li>
