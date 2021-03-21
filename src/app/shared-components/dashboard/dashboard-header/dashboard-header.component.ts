@@ -8,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardHeaderComponent implements OnInit {
 
   constructor() { }
+  showMe:boolean=false
 
   ngOnInit(): void {
+  }
+  tootgleTag(){
+    this.showMe = !this.showMe
   }
 
 }

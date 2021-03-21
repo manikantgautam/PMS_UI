@@ -1,9 +1,80 @@
-<p>dashboard works!</p>
-<app-dashboard-header>
-    
-</app-dashboard-header>
+<div id="main-wrapper">
+<app-dashboard-header></app-dashboard-header>
+<app-dashboard-sidebar></app-dashboard-sidebar>
 
 
-<app-dashboard-footer>
-    
-</app-dashboard-footer>
+
+
+<div class="page-wrapper">
+
+   
+
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-5 align-self-center">
+                <!-- <h4 class="page-title">Dashboard</h4> -->
+                <div class="d-flex align-items-center">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">company name</li>
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Library</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>                    
+        </div>
+    </div>
+
+    <div class="container-fluid">               
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="card">
+                    <div class="card-body border-bottom">
+                        <h4 class="card-title">Dashboard</h4>
+                        <h5 class="card-subtitle">Total Stats of the Month</h5>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row mt-2">
+
+                            <div class="col-md-6 col-sm-12 col-lg-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-2"><span class="text-orange display-5"><i class="mdi mdi-wallet"></i></span></div>
+                                    <div><span class="text-muted">Total Companies</span>
+                                        <h3 class="font-medium mb-0">53</h3></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 col-lg-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-2"><span class="text-primary display-5"><i class="mdi mdi-account-box"></i></span></div>
+                                    <div><span class="text-muted">Total Employees</span>
+                                        <h3 class="font-medium mb-0">5489</h3></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 col-lg-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-2"><span class="text-primary display-5"><i class="mdi mdi-account-box"></i></span></div>
+                                    <div><span class="text-muted">Total Overtime</span>
+                                        <h3 class="font-medium mb-0">Rs.23,568.90</h3></div>
+                                </div>
+                            </div>
+
+                            
+
+                        </div>
+                    </div>
+
+
+                </div>    
+            </div>    
+
+        </div>
+    </div>
+
+<app-dashboard-footer></app-dashboard-footer>
+
+    </div>
+</div>
